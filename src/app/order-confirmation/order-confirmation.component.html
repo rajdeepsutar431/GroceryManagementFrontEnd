@@ -1,0 +1,37 @@
+<div class="order-confirmation-container">
+  <h2>Order Confirmation</h2>
+  <div class="cart-layout">
+    <!-- Left Side (Price Details) -->
+    <div class="cart-left">
+      <div class="cart-summary">
+        <h3>Price Details</h3>
+        <div class="price-breakup">
+          <p>Total Price: ₹{{ totalPrice }}</p>
+          <p>Packaging Charges: ₹{{ packagingCharges }}</p>
+          <p>GST (5%): ₹{{ gstAmount }}</p>
+          <p class="total-price">Grand Total: ₹{{ grandTotal }}</p>
+        </div>
+        <h4>Delivery Address</h4>
+        <p>{{ deliveryAddress }}</p>
+
+
+        <h4>Order ID</h4>
+        <p>{{ orderId }}</p>
+      </div>
+    </div>
+
+    <!-- Right Side (Ordered Products) -->
+    <div class="cart-right">
+      <div *ngFor="let product of orderedItems" class="cart-item">
+        <img [src]="product.imageUrl" alt="{{ product.name }}" class="cart-item-img">
+        <div class="cart-item-details">
+          <h5>{{ product.name }}</h5>
+          <p>{{ product.description }}</p>
+          <p class="price">₹{{ product.price }}</p>
+          <span>Quantity: {{ product.quantity }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="navigateToHome()">Go to Home</button>
+</div>

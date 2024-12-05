@@ -1,0 +1,75 @@
+<div class="cart-container">
+
+  <div class="cart-layout">
+    <!-- Left Side (Products List) -->
+    <div class="cart-left">
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let product of cartItems" class="cart-item">
+          <img [src]="product.imageUrl" alt="{{ product.name }}" class="cart-item-img">
+          <div class="cart-item-details">
+            <h5>{{ product.name }}</h5>
+            <p>{{ product.description }}</p>
+            <p class="price">₹{{ product.price }}</p>
+
+            <!-- Star Rating -->
+            <div class="star-rating">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                <i class="fas"
+                   [ngClass]="{
+                     'fa-star': product.rating >= star,
+                     'fa-star-half-alt': product.rating >= (star - 0.5) && product.rating < star,
+                     'fa-star-empty': product.rating < (star - 0.5)
+                   }"
+                   [style.color]="product.rating >= star ? '#FFD700' : '#ccc'"></i>
+              </ng-container>
+            </div>
+            
+
+            <div class="quantity-controls">
+              <button (click)="decreaseQuantity(product)" [disabled]="product.quantity === 1">-</button>
+              <span>{{ product.quantity }}</span>
+              <button (click)="increaseQuantity(product)">+</button>
+            </div>
+          </div>
+          <div class="remove-item">
+            <button (click)="removeItem(product.id)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side (Price Details, Checkout, etc.) -->
+    <div class="cart-right">
+      <div class="cart-summary">
+        <h3>Bill Details</h3>
+        <div class="price-breakup">
+          <p>Total Price: ₹{{ totalPrice }}</p>
+          <p>Delivery Charges: ₹{{ packagingCharges }}</p>
+          <p>GST (5%): ₹{{ gstAmount }}</p>
+          <p class="total-price">Grand Total: ₹{{ grandTotal }}</p>
+        </div>
+
+        <!-- Delivery Options -->
+        <div class="delivery-options">
+          <h5>Delivery Type</h5>
+          <select>
+            <option value="standard">Standard Delivery</option>
+            <option value="express">Express Delivery</option>
+          </select>
+        
+          <h5>Delivery Address</h5>
+          <textarea [(ngModel)]="address" placeholder="Enter your address" rows="2"></textarea> <!-- Use ngModel for binding -->
+          <div *ngIf="addressError" class="error-message">Delivery address is required!</div> <!-- Error message -->
+        </div>
+
+        <!-- Buy Now Button -->
+        <button class="buy-now" (click)="proceedToPayment()">Proceed to Payment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty cart message -->
+  <ng-template #emptyCart>
+    <p>Your cart is empty!</p>
+  </ng-template>
+</div>

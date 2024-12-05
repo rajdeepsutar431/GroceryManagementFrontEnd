@@ -1,0 +1,82 @@
+.payment-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #eaf0f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-left {
+    width: 60%;
+  }
+  
+  .payment-right {
+    width: 35%;
+    text-align: center;
+  }
+  
+  .payment-total {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .payment-methods {
+    margin-bottom: 20px;
+  }
+  
+  .payment-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .payment-icon {
+    width: 40px;
+  }
+  
+  .utr-section {
+    margin-bottom: 20px;
+  }
+  
+  .utr-section input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .buy-now {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buy-now:hover {
+    background-color: #0056b3;
+  }
+  
+  .qr-code {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .payment-right h3 {
+    margin-bottom: 10px;
+  }
+  

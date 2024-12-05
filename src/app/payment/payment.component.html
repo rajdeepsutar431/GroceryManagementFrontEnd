@@ -1,0 +1,30 @@
+<div class="payment-container">
+  <div class="payment-left">
+    <!-- Display the total amount in INR -->
+    <h1 class="payment-total">₹{{ totalAmount | number:'1.2-2' }}</h1>
+
+    <div class="payment-methods">
+      <!-- Payment methods -->
+      <div class="payment-method">
+        <span>Visa Classic</span>
+        <img src="https://cdn.shopify.com/s/files/1/0283/5100/files/Visa_Inc._logo.svg.png?6728201536088354742" alt="Visa" class="payment-icon" />
+        <span>....4242</span>
+      </div>
+      <!-- You can add more payment methods here -->
+    </div>
+
+    <!-- UTR Input -->
+    <div class="utr-section">
+      <label for="utrNumber">UTR Number (Transaction Reference)</label>
+      <input type="text" id="utrNumber" [(ngModel)]="utrNumber" placeholder="Enter UTR/Transaction Number" />
+    </div>
+
+    <!-- Place Order Button -->
+    <button class="buy-now" (click)="placeOrder()">Place Order</button>
+  </div>
+
+  <div class="payment-right">
+    <h3>Prefer to pay by phone? Scan the QR code</h3>
+    <img src="https://th.bing.com/th/id/R.fabc43680e90008a253f8598820a5ff4?rik=adRCAq8CYwaRsg&riu=http%3a%2f%2fwww.emoderationskills.com%2fwp-content%2fuploads%2f2010%2f08%2fQR1.jpg&ehk=1jFEhvq4wSaLjTG66N22o2eMD5Lu5Cxq%2bw8x%2bGAzix8%3d&risl=&pid=ImgRaw&r=0" alt="QR Code" class="qr-code" />
+  </div>
+</div>

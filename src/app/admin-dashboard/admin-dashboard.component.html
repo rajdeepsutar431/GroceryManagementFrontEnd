@@ -1,0 +1,58 @@
+<div class="dashboard-container">
+    <div class="dashboard-row">
+      <!-- Sales Overview Section -->
+      <mat-card class="dashboard-card">
+        <mat-card-title>Sales Overview</mat-card-title>
+        <div class="sales-overview">
+          <p>Total Sales: ₹{{ totalSales }}</p>
+          <p>Total Orders: {{ totalOrders }}</p>
+          <p>Total Products Sold: {{ totalProductsSold }}</p>
+        </div>
+      </mat-card>
+  
+      <!-- Recent Orders Section -->
+      <mat-card class="dashboard-card">
+        <mat-card-title>Recent Orders</mat-card-title>
+        <table mat-table [dataSource]="recentOrders" class="mat-elevation-z8">
+          <ng-container matColumnDef="orderId">
+            <th mat-header-cell *matHeaderCellDef> Order ID </th>
+            <td mat-cell *matCellDef="let order"> {{order.orderId}} </td>
+          </ng-container>
+          <ng-container matColumnDef="orderAmount">
+            <th mat-header-cell *matHeaderCellDef> Amount </th>
+            <td mat-cell *matCellDef="let order"> ₹{{order.totalAmount}} </td>
+          </ng-container>
+          <ng-container matColumnDef="orderStatus">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let order"> <strong>{{order.orderStatus}}</strong> </td>
+          </ng-container>
+          <ng-container matColumnDef="placedAt">
+            <th mat-header-cell *matHeaderCellDef> Placed At </th>
+            <td mat-cell *matCellDef="let order"> {{order.placedAt | date: 'short'}} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="orderColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: orderColumns;"></tr>
+        </table>
+      </mat-card>
+    </div>
+  
+    <div class="dashboard-row">
+      <!-- Inventory Alerts -->
+      <mat-card class="dashboard-card">
+        <mat-card-title>Inventory Alerts</mat-card-title>
+        <div *ngIf="lowStockProducts.length > 0; else noLowStock">
+          <p>Low Stock Products:</p>
+          <ul>
+            <li *ngFor="let product of lowStockProducts">
+              {{ product.name }} (Stock: {{ product.stock }})
+            </li>
+          </ul>
+        </div>
+        <ng-template #noLowStock>
+          <p>All products are sufficiently stocked.</p>
+        </ng-template>
+      </mat-card>
+    </div>
+  </div>
+  

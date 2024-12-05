@@ -1,0 +1,24 @@
+<div class="order-items-container">
+    <button class="back-btn" (click)="goBack()">Back</button>
+  
+    <h2>Order Items for Order ID: ORD{{ orderId }}</h2>
+  
+    <div *ngIf="orderItems.length > 0; else noItems">
+      <div *ngFor="let item of orderItems" class="order-item">
+        <img [src]="item.imageUrl" alt="{{ item.name }}" class="order-item-img">
+        <div class="order-item-details">
+          <h5>{{ item.name }}</h5>
+          <p>Brand: {{ item.brand }}</p>
+          <p>Price: ₹{{ item.price }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+          <p>Discount: {{ item.discount }}%</p>
+          <p>Rating: {{ item.rating }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noItems>
+      <p>No items found for this order.</p>
+    </ng-template>
+  </div>
+  

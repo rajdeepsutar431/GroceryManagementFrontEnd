@@ -1,0 +1,22 @@
+<div class="orders-container">
+    <h2>My Orders</h2>
+    <div *ngIf="orders.length > 0; else noOrders">
+      <div *ngFor="let order of orders" class="order-item">
+        <div class="order-details">
+          <p><strong>Order ID:</strong> {{ order.orderId }}</p>
+          <p><strong>Total Amount:</strong> ₹{{ order.totalAmount }}</p>
+          <p><strong>Total Items:</strong> {{ order.totalItemQuantity }}</p>
+          <p><strong>Placed At:</strong> {{ order.placedAt | date: 'medium' }}</p>
+          <p><strong>Status:</strong> <span [ngClass]="getStatusClass(order.orderStatus)">{{ order.orderStatus }}</span></p>
+        </div>
+        <div class="order-actions">
+          <button class="btn-track" (click)="trackOrder(order.orderId)">Track Order</button>
+          <button class="btn-view" (click)="viewOrderItems(order.orderId)">View Order Items</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #noOrders>
+      <p>No orders found.</p>
+    </ng-template>
+  </div>
+  

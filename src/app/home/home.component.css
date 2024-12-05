@@ -1,0 +1,135 @@
+/* Styling for individual product cards */
+.HomeCard {
+    min-width: 200px;
+    margin: 0 10px; /* Adjust spacing between cards */
+    max-height: 350px;
+    background-color: #ffffffb9;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.HomeCard:hover {
+    transform: translateY(-5px);
+}
+
+/* Image occupies half the card's height, and is cropped */
+.HomeCard img {
+    width: 100%; /* Make the image fill the width of the card */
+    height: 100px; /* Set the height of the image */
+    object-fit: cover; /* Crop the image to fit inside the defined height and width */
+    object-position: center; /* Center the cropped area of the image */
+    display: block;
+    margin: 0 auto;
+}
+
+.HomeCard h6 {
+    font-weight: bold;
+    color: #212529;
+    font-size: 1.1rem;
+    margin-top: 16px;
+}
+
+.HomeCard p {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.rating {
+    font-size: 14px;
+    color: #ffc107; /* Rating star color */
+    margin-top: 5px;
+}
+
+.price {
+    margin: 10px 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.discounted-price {
+    color: #e83e8c;
+    font-weight: bold;
+}
+
+/* Product slider styling */
+.product-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px; /* Add space between product cards */
+    scroll-behavior: smooth;
+    padding: 20px;
+    width: 100%;
+    white-space: nowrap; /* Ensure that items don't break into the next line */
+}
+
+.product-slider::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+/* Slider arrows styling */
+.slider-arrow {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure arrows are above other elements */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background-color: #0056b3;
+}
+
+.left {
+    left: 10px; /* Align the left arrow to the far left of the container */
+}
+
+.right {
+
+    right: 10px; /* Align the right arrow to the far right of the container */
+}
+
+/* Style for 'Show More' button */
+.more-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.more-button button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.more-button button:hover {
+    background-color: #0056b3;
+}

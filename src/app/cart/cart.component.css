@@ -1,0 +1,172 @@
+.cart-container {
+  padding: 20px; /* Increased padding for better spacing */
+  background-color: #fff;
+  border-radius: 10px; /* Smoother rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for a cleaner look */
+  max-width: 1100px; /* Limit the max width of the cart container */
+  margin: 20px auto; /* Center the container and add top/bottom margin */
+}
+
+/* Layout: Two Columns (Left: 60%, Right: 40%) */
+.cart-layout {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px; /* Add padding inside the layout */
+}
+
+.cart-left {
+  flex: 0 0 60%; /* 60% Width */
+  padding-right: 20px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.cart-right {
+  flex: 0 0 40%; /* 40% Width */
+  padding-left: 20px;
+}
+
+/* Cart Items Styling */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0; /* Increase padding for better spacing between items */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px; /* Slightly smoother corners */
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.price {
+  font-size: 1.2rem; /* Slightly larger font for emphasis */
+  color: #e83e8c;
+  margin-top: 5px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  width: 35px; /* Increased button size for better UX */
+  height: 35px;
+  background-color: #f7fff9;
+  color: #318616;
+  border: 1px solid #318616;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.quantity-controls span {
+  font-size: 16px;
+  margin: 0 15px; /* Increased spacing between controls */
+}
+
+.remove-item button {
+  background-color: transparent;
+  color: #e83e8c; /* Changed remove button color to match overall theme */
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  font-size: 1rem; /* Adjusted size for better alignment */
+}
+
+/* Right Side Summary Styling */
+.cart-summary {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Improved shadow */
+}
+
+.cart-summary h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.price-breakup p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.total-price {
+  font-size: 1.3rem; /* Increased font size for total price */
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Delivery options styling */
+.delivery-options textarea {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  min-height: 80px; /* Set minimum height to allow for two lines */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+  font-size: 1rem;
+  margin-bottom: 15px;
+  resize: none; /* Disable resize option for consistent UI */
+}
+
+
+.delivery-options h4 {
+  margin-bottom: 10px;
+}
+
+.delivery-options select,
+.delivery-options input {
+  width: 100%;
+  padding: 10px; /* Increased padding for more space */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* Adjusted font size */
+}
+
+/* Styles for Buy Now Button */
+.buy-now {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #318616;
+  color: #f0f0f0;
+  border: 1px solid #318616; /* Specify width, style, and color */
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Change color on hover */
+.buy-now:hover {
+  background-color: #267a0b; /* Slightly darker green for hover */
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.star-rating i {
+  font-size: 1.4rem; /* Increased star size */
+  margin-right: 5px;
+  color: #FFD700; /* Default color for full stars */
+}
+
+.fa-star-empty {
+  color: #ccc; /* Color for empty stars */
+}

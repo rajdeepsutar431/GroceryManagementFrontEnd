@@ -1,0 +1,72 @@
+/* Container for centering the login card */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #5bb442, #c1da4e);
+}
+
+
+/* Styling for the login card */
+.login-card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Login form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Styling for the login button */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Additional actions styling */
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+button {
+  font-weight: bold;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+  }
+}
+
+mat-card-title {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}

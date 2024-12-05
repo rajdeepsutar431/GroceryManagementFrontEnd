@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div *ngFor="let category of categorizedProducts; let i = index">
+    <!-- Category Title -->
+    <h5>{{ category.name }}</h5>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+      <!-- Arrow for sliding products left -->
+      <button class="slider-arrow left" (click)="slideLeft(i)">&#10094;</button>
+
+      <!-- Row of Products for this Category -->
+      <div class="row product-slider" *ngIf="category.products.length">
+        <div class="col-md-3" *ngFor="let product of category.products.slice(0, category.showMore ? category.products.length : 5)">
+          <div class="HomeCard">
+            <img [src]="product.imageUrl" alt="{{product.name}}" />
+            <h6>{{product.name}}</h6>
+            <p>{{product.description}}</p>
+            <p class="rating">Rating: {{product.rating | number:'1.1-1'}}</p>
+            <div class="price">
+              <span class="original-price">{{product.price + product.discount | currency:'INR':'symbol':'1.0-0'}}</span>
+              <span class="discounted-price">{{(product.price) | currency:'INR':'symbol':'1.0-0'}}</span>
+            </div>
+
+            <!-- Add/Remove Button Logic -->
+            <div *ngIf="product.quantity === 0">
+              <button class="btn btn-secondary" (click)="addToCart(product)">Add</button>
+            </div>
+            <div *ngIf="product.quantity > 0" class="quantity-controls">
+              <button class="btn btn-outline-secondary" (click)="decreaseQuantity(product)">-</button>
+              <span>{{ product.quantity }}</span>
+              <button class="btn btn-outline-secondary" (click)="increaseQuantity(product)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow for sliding products right -->
+      <button class="slider-arrow right" (click)="slideRight(i)">&#10095;</button>
+    </div>
+
+    <!-- More Button -->
+    <!-- <div class="more-button" *ngIf="category.products.length > 5">
+      <button class="btn btn-outline-primary" (click)="category.showMore = !category.showMore">
+        {{ category.showMore ? 'Show Less' : 'Show More' }}
+      </button>
+    </div> -->
+  </div>
+</div>
